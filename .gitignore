@@ -1,9 +1,3 @@
-# Virtual Environment
-.venv/
-venv/
-env/
-ENV/
-
 # Python
 __pycache__/
 *.py[cod]
@@ -22,6 +16,7 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -45,8 +40,34 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
+*.py,cover
 .hypothesis/
 .pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -60,6 +81,12 @@ ipython_config.py
 
 # pipenv
 Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
 
 # PEP 582
 __pypackages__/
@@ -98,19 +125,50 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
 # Machine Learning specific
+# Model files
 *.pkl
+*.pickle
 *.joblib
 *.h5
 *.hdf5
-*.model
-*.weights
+*.pb
+*.pth
+*.pt
+*.onnx
+*.tflite
+*.mlmodel
 
-# Data files (uncomment if you want to exclude data)
+# Training artifacts
+checkpoints/
+logs/
+tensorboard_logs/
+wandb/
+mlruns/
+.mlflow/
+
+# CatBoost specific
+catboost_info/
+
+# Data files (uncomment if you don't want to track data)
 # *.csv
 # *.json
-# *.xlsx
 # *.parquet
+# *.feather
+# *.xlsx
+# *.xls
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
+*.7z
 
 # IDE
 .vscode/
@@ -128,5 +186,12 @@ dmypy.json
 ehthumbs.db
 Thumbs.db
 
-# CatBoost specific
-catboost_info/
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Processed data (if generated from scripts)
+processed_*.csv
+processed_*.json
